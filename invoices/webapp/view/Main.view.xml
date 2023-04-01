@@ -1,16 +1,12 @@
-<mvc:View controllerName="logaligroup.invoices.controller.Main"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-      <content >
-         <Panel headerText="{i18n>helloPanel}" class=" sapResponsiveMargin" width="auto" >
-          <content >
-          <Button  text ="{i18n>showHelloButtonText}"  press="onShowHello" class= "sapUiSmallMarginEnd"  />
-          <Input value="{/recipient/name}" valueLiveUpdate="true" width="50%" ></Input>
-             
-         <Text  text =" hello {/recipient/name}" class= "sapUiTyniMargin boldElements sapthemeHighligh-asColor " ></Text>
-        </content >
-      </Panel>
-      </content >
-    </Page>
+<mvc:View  controllerName="logaligroup.invoices.controller.Main"
+              xmlns:mvc = "sap.ui.core.mvc" displayBlock="true"
+              xmlns = "sap.m">
+              <Page id= "page" title="{i18n>title}">
+               <content>
+                 
+                 <mvc:XMLView  viewName="logaligroup.invoices.view.HelloPanel"/>
+                  
+                 
+             </content>
+            </Page >         
 </mvc:View>
