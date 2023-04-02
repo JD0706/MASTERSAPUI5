@@ -1,12 +1,18 @@
-<mvc:View  controllerName="logaligroup.invoices.controller.Main"
-              xmlns:mvc = "sap.ui.core.mvc" displayBlock="true"
-              xmlns = "sap.m">
-              <Page id= "page" title="{i18n>title}">
-               <content>
-                 
-                 <mvc:XMLView  viewName="logaligroup.invoices.view.HelloPanel"/>
-                  
-                 
-             </content>
-            </Page >         
+<mvc:View controllerName="logaligroup.invoices.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+   
+    <Page id="page" title="{i18n>title}">
+      <headerContent>
+      <Button id="helloDialogheader"
+               icon="sap-icon://action"
+               press="onOpenDialogHeader"
+               class="sapUiSmallMarginEnd" ></Button>
+      </headerContent>
+      <content >
+        <mvc:XMLView viewName="logaligroup.invoices.view.HelloPanel"/>
+        
+      </content >
+    </Page>
+   
 </mvc:View>

@@ -1,9 +1,14 @@
+/**
+ * eslint-disable @sap/ui5-jsdocs/no-jsdoc
+ */
+
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "sap/ui/Device",
-    "logaligroup/invoices/model/models"
+   
+    "logaligroup/invoices/model/models",
+    "./controller/HelloDialog"
 ],
-function (UIComponent, Device, models) {
+function (UIComponent,  models,HelloDialog) {
     "use strict";
 
     return UIComponent.extend("logaligroup.invoices.Component", {
@@ -26,7 +31,17 @@ function (UIComponent, Device, models) {
             // set the device model
            // this.setModel(models.createDeviceModel(), "device");
             this.setModel(models.createRecipient()) ;
-          
+            this._helloDialog = new HelloDialog(this.getRootControl());
+                       
+        },
+
+        exit : function(){
+            this._helloDialog.destroy() ; 
+            delete this._helloDialog;
+        },
+
+        onOpenDialog : function(){
+            this._helloDialog.open();
         }
     });
 }
