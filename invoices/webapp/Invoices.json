@@ -1,0 +1,36 @@
+{
+    "Invoices" : [
+       { 
+         "ProducName"  : "HDD-sangsung 250Gb",
+         "Quantity"    :  21,
+         "ExtendedPrice" : 87.20,
+         "ShipperName" : "Fun Inc.",
+         "ShippedDate" : "2015-04-01T00:00:00",
+         "Status" : "A"
+         },
+       { 
+         "ProducName"  : "Dysplay Dell UHB50 4k 27",
+         "Quantity"    :  4,
+         "ExtendedPrice" : 9.99,
+         "ShipperName" : "ACME",
+         "ShippedDate" : "2015-04-01T00:00:00",
+         "Status" : "B"
+         },
+       { 
+         "ProducName"  : "RAM PX DDR PC4-24000 16GB",
+         "Quantity"    :  3,
+         "ExtendedPrice" : 6.85,
+         "ShipperName" : "ACME",
+         "ShippedDate" : "2015-03-02T00:00:00",
+         "Status" : "B"
+         },
+       { 
+         "ProducName"  : "Intel Care 17-9700k 6.Ghz",
+         "Quantity"    :  2,
+         "ExtendedPrice" : 68.80,
+         "ShipperName" : "ACME",
+         "ShippedDate" : "2015-04-01T00:00:00",
+         "Status" : "B"
+         }
+       ]
+    }

@@ -11,7 +11,7 @@
       </headerContent>
       <content >
         <mvc:XMLView viewName="logaligroup.invoices.view.HelloPanel"/>
-        
+        <mvc:XMLView viewName="logaligroup.invoices.view.InvoicesList"/>
       </content >
     </Page>
    

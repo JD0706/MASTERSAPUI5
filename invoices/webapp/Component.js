@@ -4,11 +4,11 @@
 
 sap.ui.define([
     "sap/ui/core/UIComponent",
-   
+    "sap/ui/Device",
     "logaligroup/invoices/model/models",
     "./controller/HelloDialog"
 ],
-function (UIComponent,  models,HelloDialog) {
+function (UIComponent, Device, models,HelloDialog) {
     "use strict";
 
     return UIComponent.extend("logaligroup.invoices.Component", {

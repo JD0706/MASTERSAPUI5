@@ -73,6 +73,10 @@
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
+      },
+      "invoices" :{
+        "type": "sap.ui.model.json.JSONModel",
+        "uri" : "Invoices.json"
       }
     },
     "resources": {
