@@ -1,4 +1,4 @@
-<mvc:View 
+<mvc:View  controllerName="logaligroup.invoices.controller.InvoicesList" 
               xmlns:mvc="sap.ui.core.mvc" 
               xmlns="sap.m">
 <List  headerText="{i18n>InvoicesListTitle}" 
@@ -6,9 +6,19 @@
         width="auto"
         items='{invoices>/Invoices}'>
        <items>
-          <ObjectListItem title="{invoices>Quantity} x {invoices>ProducName}"   /> 
-                                                                                 
-                                                                                                 
+          <ObjectListItem title="{invoices>Quantity} x {invoices>ProducName}"
+                                          number="{ parts:[{path:'invoices>ExtendedPrice'},
+                                                            {path:'currency>/usd'}],                  
+                                                            type: 'sap.ui.model.type.Currency',
+                                                            formatOption :{
+                                                              showMeasure:false
+                                                            }
+                                                }"
+                 nuberUnit="{currency>/usd}"
+                 numberState="{= ${invoices>ExtendedPrice} > 50 ? 'Success' : 'Error'}"   />                            
+                                                 
+                                          
+                                                                        
        </items>
        
 </List>
