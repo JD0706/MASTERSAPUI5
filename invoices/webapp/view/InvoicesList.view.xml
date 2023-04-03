@@ -1,25 +1,34 @@
-<mvc:View  controllerName="logaligroup.invoices.controller.InvoicesList" 
-              xmlns:mvc="sap.ui.core.mvc" 
-              xmlns="sap.m">
-<List  headerText="{i18n>InvoicesListTitle}" 
-       class="sapUiResposiveMargin"
-        width="auto"
-        items='{invoices>/Invoices}'>
-       <items>
-          <ObjectListItem title="{invoices>Quantity} x {invoices>ProducName}"
-                                          number="{ parts:[{path:'invoices>ExtendedPrice'},
+<mvc:View controllerName="logaligroup.invoices.controller.InvoicesList" 
+     xmlns:mvc="sap.ui.core.mvc"
+     xmlns="sap.m">
+    <List id="invoiceList" 
+    headerText="{i18n>InvoicesListTitle}" 
+    class="sapUiResposiveMargin" width="auto"
+     items="{northwid>/Invoices}">
+        <headerToolbar>
+         <Toolbar >
+         <Title text= "{i18n>invoicesListTitle}"/>
+         <ToolbarSpacer />
+         <SearchField width="50%" search = "onFilterInvoices" ></SearchField>
+         
+         </Toolbar>
+        </headerToolbar>
+        <items>
+       
+
+            <ObjectListItem
+                title="{northwid>Quantity} x {northwid>ProductName}"
+                number="{ parts:[{path:'northwid>ExtendedPrice'},
                                                             {path:'currency>/usd'}],                  
                                                             type: 'sap.ui.model.type.Currency',
                                                             formatOption :{
                                                               showMeasure:false
                                                             }
-                                                }"
-                 nuberUnit="{currency>/usd}"
-                 numberState="{= ${invoices>ExtendedPrice} > 50 ? 'Success' : 'Error'}"   />                            
-                                                 
-                                          
-                                                                        
-       </items>
-       
-</List>
-</mvc:View>   
+                                                   }"
+                
+                numberState="{= ${northwid>ExtendedPrice} > 50 ? 'Success' : 'Error'}"
+            type = "Navigation"
+            press = "navigateToDetails"/>
+        </items>
+    </List>
+</mvc:View>

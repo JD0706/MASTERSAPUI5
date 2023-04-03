@@ -69,7 +69,7 @@
           "bundleName": "logaligroup.invoices.i18n.i18n"
         }
       },
-      "": {
+      "northwid": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {}

@@ -7,6 +7,7 @@ modules:
   path: matinv-approuter
   requires:
   - name: matinv_html_repo_runtime
+  - name: dest_Invoices
   parameters:
     disk-quota: 256M
     memory: 256M
@@ -28,3 +29,8 @@ resources:
   parameters:
     service: html5-apps-repo
     service-plan: app-host
+- name: dest_Invoices
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-plan: lite
