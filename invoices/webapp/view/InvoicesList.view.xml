@@ -4,7 +4,7 @@
     <List id="invoiceList" 
     headerText="{i18n>InvoicesListTitle}" 
     class="sapUiResposiveMargin" width="auto"
-     items="{northwid>/Invoices}">
+     items="{northwind>/Invoices}">
         <headerToolbar>
          <Toolbar >
          <Title text= "{i18n>invoicesListTitle}"/>
@@ -17,8 +17,8 @@
        
 
             <ObjectListItem
-                title="{northwid>Quantity} x {northwid>ProductName}"
-                number="{ parts:[{path:'northwid>ExtendedPrice'},
+                title="{northwind>Quantity} x {northwind>ProductName}"
+                number="{ parts:[{path:'northwind>ExtendedPrice'},
                                                             {path:'currency>/usd'}],                  
                                                             type: 'sap.ui.model.type.Currency',
                                                             formatOption :{
@@ -26,7 +26,7 @@
                                                             }
                                                    }"
                 
-                numberState="{= ${northwid>ExtendedPrice} > 50 ? 'Success' : 'Error'}"
+                numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}"
             type = "Navigation"
             press = "navigateToDetails"/>
         </items>

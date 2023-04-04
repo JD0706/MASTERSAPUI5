@@ -20,7 +20,7 @@ sap.ui.define([
         const aFilter = [];
         const sQuery = oEvent.getParameter("query");
         if (sQuery) {
-            aFilter.push(new Filter("ProducName", FilterOperator.Contains, sQuery));
+            aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
         };
           const oList = this.getView().byId("invoiceList");
           const oBinding = oList.getBinding("items");
