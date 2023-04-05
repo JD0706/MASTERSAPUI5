@@ -1,5 +1,5 @@
 {
-  "_version": "1.49.0",
+  "_version": "1.42.0",
   "sap.app": {
     "id": "logaligroup.invoices",
     "type": "application",
@@ -12,8 +12,8 @@
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
-      "version": "1.9.2",
-      "toolsId": "f1232cf0-c276-43c2-a68b-7dfb754bc853"
+      "version": "1.8.3",
+      "toolsId": "f88f92f4-c285-49a4-96f7-e6f94b5b0949"
     },
     "dataSources": {
       "mainService": {
@@ -46,7 +46,7 @@
   "sap.ui5": {
     "flexEnabled": false,
     "dependencies": {
-      "minUI5Version": "1.111.0",
+      "minUI5Version": "1.102.0",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -74,9 +74,9 @@
         "preload": true,
         "settings": {}
       },
-      "invoices" :{
+      "invoices" :{ 
         "type": "sap.ui.model.json.JSONModel",
-        "uri" : "Invoices.json"
+         "uri" :"Invoices.json"
       }
     },
     "resources": {
@@ -103,6 +103,13 @@
           "target": [
             "TargetMain"
           ]
+        },
+        {
+          "name": "Details",
+          "pattern": "details",
+          "target": [
+            "TargetDetails"
+          ]
         }
       ],
       "targets": {
@@ -112,6 +119,13 @@
           "clearControlAggregation": false,
           "viewId": "Main",
           "viewName": "Main"
+        },
+        "TargetDetails": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Details",
+          "viewName": "Details"
         }
       }
     },
