@@ -6,7 +6,9 @@
    
     <Page  title="{i18n>detailsPageTitle}">
     
-      <ObjectHeader title="Invoices"/>
+      <ObjectHeader title="{northwind>Quantity} x {northwind>ProductName}">
+      
+      </ObjectHeader>
      
     </Page>
    </mvc:View>

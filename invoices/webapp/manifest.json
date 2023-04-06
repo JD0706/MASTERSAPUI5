@@ -106,7 +106,7 @@
         },
         {
           "name": "Details",
-          "pattern": "details",
+          "pattern": "details/{invoicePath}",
           "target": [
             "TargetDetails"
           ]
