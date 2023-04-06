@@ -1,7 +1,9 @@
 sap.ui.define([
-    'sap/ui/core/mvc/Controller'
+    'sap/ui/core/mvc/Controller',
+    'sap/ui/core/routing/History',
+    'sap/ui/core/UIComponent'
    
-], function(Controller) {
+], function(Controller,History,UIComponent) {
     'use strict';
 
     return Controller.extend("logaligroup.invoices.controller.Details",{
@@ -13,12 +15,25 @@ sap.ui.define([
             });
           },
     
-
-
         onInit: function(){
             const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
             oRouter.getRoute("Details").attachPatternMatched(this._onObjectMatch, this);
-        }
+        },
+
+        onNavBack : function(){
+            const oHistory= History.getInstance();
+            const sPreviousHash = oHistory.getPreviousHash();
+    
+            if ( sPreviousHash  !== undefined) {
+              window.history.go(-1);
+    
+            }else {
+              const oRouter = UIComponent.getRouterFor(this);
+              oRouter.navTo("RouteMain", {}, true)
+            }
+            
+    
+          },
 
     });
   

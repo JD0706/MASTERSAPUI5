@@ -4,10 +4,19 @@
     xmlns:core="sap.ui.core"
     xmlns="sap.m"  >
    
-    <Page  title="{i18n>detailsPageTitle}">
+    <Page  title="{i18n>detailsPageTitle}"
+    showNavButton="true"
+     navButtonPress =".onNavBack">
     
       <ObjectHeader title="{northwind>Quantity} x {northwind>ProductName}">
-      
+      <attributes>
+      <ObjectAttribute  text = "{northwind>ShipName}"/>
+      <ObjectAttribute  text = "{northwind>ShipAddress}"/>
+      <ObjectAttribute  text = "{northwind>ShiCity}"/>
+      <ObjectAttribute  text = "{northwind>ShipPostalCode}"/>
+      <ObjectAttribute  text = "{northwind>ShipCountry}"/>
+      <ObjectAttribute  text = "{northwind>CustomerName}"/>
+        </attributes>
       </ObjectHeader>
      
     </Page>
