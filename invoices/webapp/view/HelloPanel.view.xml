@@ -3,13 +3,22 @@
                 xmlns = "sap.m"
                 xmlns:core="sap.ui.core">
                        
-               <Panel headerText= "{i18n>helloPanel}" class="sapUiResponsiveMargin" width="auto">
+               <Panel headerText= "{i18n>helloPanel}"
+                class="sapUiResponsiveMargin" 
+                width="auto"
+                expandable = "{device>system/phone}"
+                expanded ="{= !${device>system/phone}}" >
                   <content>
                   <Button text="{i18n>HelloDialgButton}" 
                        icon="sap-icon://action"
-                   press= ".onOpenDialog" class="sapUiSmallMarginEnd"></Button>
-                                    <Button text="{i18n>showHelloButtonText}"  press= ".onShowHellow" class="sapUiSmallMarginEnd"></Button>
-                  <Input value ="{/recipient/name}" valueLiveUpdate="true" width="60%" />
+                     press= ".onOpenDialog"
+                      class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"></Button>
+                    <Button text="{i18n>showHelloButtonText}" 
+                     press= ".onShowHellow" 
+                     class="sapUiSmallMarginEnd sapUiHideOnDesktop" ></Button>
+                  <Input value ="{/recipient/name}" 
+                  valueLiveUpdate="true" 
+                  width="60%" />
                    <Text  text= "Hello {/recipient/name}" class = "sapUiTinyMargin boldElements sapthemeHighlight-asColor"  > </Text>
                  </content>
                  <core:Fragment fragmentName="logaligroup.invoices.view.Form01" type="XML" />

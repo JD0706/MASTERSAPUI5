@@ -8,7 +8,7 @@ sap.ui.define([
     "logaligroup/invoices/model/models",
     "./controller/HelloDialog"
 ],
-function (UIComponent, Device, models,HelloDialog) {
+function (UIComponent,Device,models,HelloDialog) {
     "use strict";
 
     return UIComponent.extend("logaligroup.invoices.Component", {
@@ -29,7 +29,7 @@ function (UIComponent, Device, models,HelloDialog) {
             this.getRouter().initialize();
 
             // set the device model
-           // this.setModel(models.createDeviceModel(), "device");
+          //  this.setModel(models.createDeviceModel(), "device");
             this.setModel(models.createRecipient()) ;
             this._helloDialog = new HelloDialog(this.getRootControl());
                        
