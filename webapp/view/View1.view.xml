@@ -6,7 +6,9 @@
         <IconTabBar >
         <items>
         <IconTabFilter text="{i18n>objecList}" >
-        <List items="{/Products}" >
+        <List items="{ path:'/Products',filters:[
+           { path:'Brand' , operator: 'EQ' , value1:'Compaq'}
+        ]}" >
          <items>
          <ObjectListItem title="{Material}   {Brand} {Model}"
            number="{Price}" numberUnit="{Currency}" type="Detail">
@@ -18,7 +20,19 @@
 
         </IconTabFilter>
         <IconTabFilter text="{i18n>standardList}" >
-         <List items="{/Products}" >
+        <Select selectedKey="{/typeSelection}">
+        <items>
+           <core:Item key="None" text="{i18n>None}"></core:Item>
+           <core:Item key="MultiSelect" text="{i18n>MultiSelec}"></core:Item>
+           <core:Item key="SingleSelectLeft" text="{i18n>SingleSelecLef}"></core:Item>
+           <core:Item key="SingleSelecMaster" text="{i18n>SingleSelecMater}"></core:Item>
+        </items>
+        </Select>
+        <Button text="{i18n>showSelectionItems}" press ="onSelectedRows" class="sapUiSmallMarginBegin"></Button>
+        <Button text="{i18n>deleteSelectionItems}" press ="onDeleteSelectedRows" class="sapUiSmallMarginBegin"></Button>
+         <List id="standardList" items="{path :'/Products',sorter:{
+             path:'Brand',descending:false,group:true
+         },groupHeaderFactory:'.getGroupHeader'}" mode="{/typeSelection}">
          <items>
          <StandardListItem title="{Material}   {Brand} {Model}" description="weight"
            info="{Price} {Currency}" type="Active">
