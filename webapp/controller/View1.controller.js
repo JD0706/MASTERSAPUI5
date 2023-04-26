@@ -27,7 +27,7 @@ sap.ui.define([
 
           }
           function onFilter(){
-             var oJson = this.getView().getModel().getData();
+             var oJson = this.getView().getModel("jsonCountries").getData();
              var filters = [];
              if(oJson.employeeId !==""){
                filters.push(new sap.ui.model.Filter("EmployeeID", "EQ" ,oJson.employeeId))
@@ -41,14 +41,14 @@ sap.ui.define([
           }
 
           function  onClearFilter() {
-           var oModel = this.getView().getModel();
+           var oModel = this.getView().getModel("jsonCountries");
            oModel.setProperty("/employeeId","")
            oModel.setProperty("/countrykey","")
           } 
           
           function showPostaCode(oEvent){
             var itemPressed = oEvent.getSource();
-            var context = itemPressed.getBindingContext();
+            var context = itemPressed.getBindingContext("jsonEmployees");
             var object  =  context.getObject() ;
             sap.m.MessageToast.show(object.PostalCode);
 
