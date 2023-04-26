@@ -53,33 +53,24 @@ sap.ui.define([
             sap.m.MessageToast.show(object.PostalCode);
 
           }
+
             return Controller.extend("logaligroup.employees.controller.View1", {
-            onAfterRendering: function () {
-                var oJSONModel = new sap.ui.model.json.JSONModel();
-                var oView = this.getView();
-                var i18nBundle = oView.getModel("i18n").getResourceBundle();
-             /*  var oJSON = {
-                    employeeId:"123456",
-                    countrykey: "UK",
-                    listCountry :[
-                        {
-                         key: "US",
-                         text: i18nBundle.getText("countryUS")   
-                        },
-                        {
-                            key: "UK",
-                            text: i18nBundle.getText("countryUK")   
-                         },
-                         {
-                            key: "ES",
-                            text: i18nBundle.getText("countryES")   
-                         }
+          
+              onAfterRendering: function () {
+               var oView = this.getView();
+             
+              var i18nBundle = oView.getModel("i18n").getResourceBundle();
+            
 
-                    ]
-                };*/
-
+            
+              var oJSONModel = new sap.ui.model.json.JSONModel();
                 oJSONModel.loadData("./localService/mockdata/Employees.json",false);
-                oView.setModel(oJSONModel);
+                oView.setModel(oJSONModel,"jsonEmployees");
+
+
+                var oJSONModelCountries = new sap.ui.model.json.JSONModel();
+                oJSONModelCountries.loadData("./localService/mockdata/Countries.json",false);
+                oView.setModel(oJSONModelCountries,"jsonCountries");
 
             },
             onValidate  : onValidate,

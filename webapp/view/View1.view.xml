@@ -6,12 +6,12 @@
         <HBox >
         <Label id="labelEmployee" text="{i18n>labelEmployee}"   class="sapUiTinyMargin"/>
 
-        <Input id= "inputEmployee" value="{/employeeId}" maxLength="6"  width="200px"   class="sapUiSmallMarginEnd"  ></Input>
+        <Input id= "inputEmployee" value="{jsonCountries>/employeeId}" maxLength="6"  width="200px"   class="sapUiSmallMarginEnd"  ></Input>
         <Label id="labelCountry" text="{i18n>labelCountry}"   class="sapUiTinyMargin" visible="false"/>
-        <Select id="slCountry" selectedKey="{/countrykey}"  items ="{/listCountry}" forceSelection="false" >
+        <Select id="slCountry" selectedKey="{jsonCountries>/countrykey}"  items ="{jsonCountries>/listCountry}" forceSelection="false" >
 
         <items>
-         <core:Item key= "{key}" text="{text}" />
+         <core:Item key= "{jsonCountries>key}" text="{jsonCountries>text}" />
           </items>
         </Select>
          <Button id="btnFilter" text="{i18n>btnFilter}" icon="sap-icon//search" press="onFilter" class = "sapUi5SmallMargingaui"></Button>
@@ -19,7 +19,7 @@
         </HBox>
         <HBox >
         <Panel >
-         <Table id="tableEmployee" items="{/employees}" >
+         <Table id="tableEmployee" items="{jsonEmployees>/}" >
          <columns>
          <Column >
           <header>
@@ -45,10 +45,10 @@
          <items>
           <ColumnListItem type="Active" press="showPostaCode">
           <cells>
-            <Label text="{EmployeeID}" ></Label>
-            <Label text="{LastName}" ></Label>
-            <Label text="{Country}" ></Label>
-            <Label text="{City}" ></Label>
+            <Label text="{jsonEmployees>EmployeeID}" ></Label>
+            <Label text="{jsonEmployees>LastName}" ></Label>
+            <Label text="{jsonEmployees>Country}" ></Label>
+            <Label text="{jsonEmployees>City}" ></Label>
            </cells>
            
           </ColumnListItem>
