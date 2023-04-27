@@ -72,6 +72,17 @@ sap.ui.define([
                 oJSONModelCountries.loadData("./localService/mockdata/Countries.json",false);
                 oView.setModel(oJSONModelCountries,"jsonCountries");
 
+                var oJsonModelConfig = new sap.ui.model.json.JSONModel({
+
+                  visibleID :true,
+                  visibleName :true,
+                  visibleCity :false,
+                  visiblebtnShowCity :true,
+                  visiblebtnHideCity :false
+
+                })
+                oView.setModel(oJsonModelConfig,"jsonModelConfig");
+
             },
             onValidate  : onValidate,
             onFilter:onFilter,
