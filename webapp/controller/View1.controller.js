@@ -52,7 +52,21 @@ sap.ui.define([
             var object  =  context.getObject() ;
             sap.m.MessageToast.show(object.PostalCode);
 
-          }
+             }
+
+             function onshowCity(oEvent){
+                var oJsonModelConfig=this.getView().getModel("jsonModelConfig")
+                oJsonModelConfig.setProperty("/visibleCity",true);
+                oJsonModelConfig.setProperty("/visibleBtnShowCity",false);
+                oJsonModelConfig.setProperty("/visibleBtnHideCity",true);
+             }
+
+             function onHideCity(oEvent){
+              var oJsonModelConfig=this.getView().getModel("jsonModelConfig")
+              oJsonModelConfig.setProperty("/visibleCity",false);
+              oJsonModelConfig.setProperty("/visibleBtnShowCity",true);
+              oJsonModelConfig.setProperty("/visibleBtnHideCity",false);
+           }
 
             return Controller.extend("logaligroup.employees.controller.View1", {
           
@@ -77,8 +91,9 @@ sap.ui.define([
                   visibleID :true,
                   visibleName :true,
                   visibleCity :false,
-                  visiblebtnShowCity :true,
-                  visiblebtnHideCity :false
+                  visibleBtnShowCity :true,
+                  visibleBtnHideCity :false
+                  
 
                 })
                 oView.setModel(oJsonModelConfig,"jsonModelConfig");
@@ -87,6 +102,8 @@ sap.ui.define([
             onValidate  : onValidate,
             onFilter:onFilter,
             onClearFilter:onClearFilter,
-            showPostaCode:showPostaCode
+            showPostaCode:showPostaCode,
+            onshowCity: onshowCity,
+            onHideCity:onHideCity
         });
     });
