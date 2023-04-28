@@ -68,6 +68,55 @@ sap.ui.define([
               oJsonModelConfig.setProperty("/visibleBtnHideCity",false);
            }
 
+           function showOrders(oEvent){
+            var ordersTable = this.getView().byId("ordersTable")
+             ordersTable.destroyItems();
+
+             var itemPressed = oEvent.getSource();
+             var oContext = itemPressed.getBindingContext("jsonEmployees");
+             var object = oContext.getObject();
+             var orders = object.Orders;
+
+             var orderItems= [];
+
+             for (var i in orders){
+              orderItems.push( new sap.m.ColumnListItem({
+                 cells : [
+                   new sap.m.Label({text :orders[i].OrdersID}),
+                   new sap.m.Label({text :orders[i].Freight}),
+                   new sap.m.Label({text :orders[i].ShipAddress}),
+                 ]
+              }))
+             }
+
+             var newTable = new sap.m.Table({
+              width:"auto",
+              columns :[
+                   new sap.m.Column({
+                    header : new sap.m.Label({ 
+                      text:"{i18n>orderID}"
+                    })
+                  }),
+                  new sap.m.Column({
+                    header : new sap.m.Label({ 
+                      text:"{i18n>freight}"
+                    })
+                  }),
+                  new sap.m.Column({
+                    header : new sap.m.Label({ 
+                      text:"{i18n>shipAddress}"
+                    })
+                  })
+                    
+              ],
+              items : orderItems
+               
+             } ).addStyleClass("sap.UiSmallMargin")
+             ordersTable.addItem(newTable)
+
+            }
+          
+
             return Controller.extend("logaligroup.employees.controller.View1", {
           
               onAfterRendering: function () {
@@ -104,6 +153,7 @@ sap.ui.define([
             onClearFilter:onClearFilter,
             showPostaCode:showPostaCode,
             onshowCity: onshowCity,
-            onHideCity:onHideCity
+            onHideCity:onHideCity,
+            showOrders:showOrders
         });
     });
