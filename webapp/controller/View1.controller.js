@@ -166,20 +166,22 @@ sap.ui.define([
 
             }
 
-          function showOrdersDialog(oEvent){
+          function  showOrdersDialog(oEvent){
             var iconPressed = oEvent.getSource();
-            if(!this.DialogOrders){
-              this.DialogOrders = sap.ui.xmlfragment("logaligroup.employees.fragment.DialogOrders", this);
-              this.getView().addDependent(this.oDialoOrders);
+            var oContext = iconPressed.getBindingContext("jsonEmployees");
+
+            if(!this.oDialogOrders){
+              this.oDialogOrders = sap.ui.xmlfragment("logaligroup.employees.fragment.DialogOrders", this);
+              this.getView().addDependent(this.oDialogOrders);
             }
-            this.DialogOrders.bindElement("jsonEmployees>" + getPath() ) ;
-            this.DialogOrders.open(); 
+            this.oDialogOrders.bindElement("jsonEmployees>" + oContext.getPath() ) ;
+            this.oDialogOrders.open(); 
                       
           }
 
           function onCloseOrders(oEvent){
 
-            this.DialogOrders.close(); 
+            this.oDialogOrders.close(); 
 
 
           }
