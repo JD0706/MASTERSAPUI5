@@ -165,6 +165,24 @@ sap.ui.define([
 
 
             }
+
+          function showOrdersDialog(oEvent){
+            var iconPressed = oEvent.getSource();
+            if(!this.DialogOrders){
+              this.DialogOrders = sap.ui.xmlfragment("logaligroup.employees.fragment.DialogOrders", this);
+              this.getView().addDependent(this.oDialoOrders);
+            }
+            this.DialogOrders.bindElement("jsonEmployees>" + getPath() ) ;
+            this.DialogOrders.open(); 
+                      
+          }
+
+          function onCloseOrders(oEvent){
+
+            this.DialogOrders.close(); 
+
+
+          }
           
 
             return Controller.extend("logaligroup.employees.controller.View1", {
@@ -204,6 +222,8 @@ sap.ui.define([
             showPostaCode:showPostaCode,
             onshowCity: onshowCity,
             onHideCity:onHideCity,
-            showOrders:showOrders
+            showOrders:showOrders,
+            showOrdersDialog:showOrdersDialog,
+            onCloseOrders:onCloseOrders
         });
     });

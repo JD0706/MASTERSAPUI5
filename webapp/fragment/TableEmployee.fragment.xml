@@ -24,17 +24,22 @@
             <Label text="{i18n>tabeCity}"/>
           </header>
          </Column>
-         </columns>
+         <Column width="100px" >
+         <header>
+               <Label text= "{i18n>tableShowDetails}"></Label>
+           </header>
+         </Column>
+          </columns>
          <items>
-          <ColumnListItem type="Active" press="showOrders">
+          <ColumnListItem ><!--type="Active" press="showOrders"-->
           <cells>
             <Label text="{jsonEmployees>EmployeeID}" ></Label>
             <Label text="{jsonEmployees>LastName}" ></Label>
             <Label text="{jsonEmployees>Country}" ></Label>
             <Label text="{jsonEmployees>City}" ></Label>
+            <core:Icon src="sap-icon://show" press="showOrdersDialog"></core:Icon>
            </cells>
-           
-          </ColumnListItem>
+           </ColumnListItem>
          </items>
          </Table>
          <HBox  id= "ordersTable">
@@ -42,3 +47,4 @@
          </HBox>
         </Panel>
 </core:FragmentDefinition>
+
