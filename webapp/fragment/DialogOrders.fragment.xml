@@ -23,7 +23,7 @@
        </columns>
        <items>
          <ColumnListItem>
-           <cells>git remote add origin https://github.com/JD0706/MASTERSAPUI5.gitgitstauta
+           <cells>
             <Label text="{jsonEmployees>OrderID}"></Label>
             <Label text="{jsonEmployees>Freight}"></Label>
            <Label text="{jsonEmployees>ShipAddress}"></Label>
