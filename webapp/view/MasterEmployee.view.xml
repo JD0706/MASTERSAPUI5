@@ -1,9 +1,9 @@
-<mvc:View xmlns:cards="sap.f.cards" controllerName="logaligroup.employees.controller.View1"
+<mvc:View xmlns:cards="sap.f.cards" controllerName="logaligroup.employees.controller.MasterEmployee"
     xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"  displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content >
-        <HBox >
+        <HBox wrap="Wrap" >
         <Label id="labelEmployee" text="{i18n>labelEmployee}"   class="sapUiTinyMargin"/>
 
         <Input id= "inputEmployee" value="{jsonCountries>/employeeId}" maxLength="6"  width="200px"   class="sapUiSmallMarginEnd"  ></Input>
@@ -11,11 +11,11 @@
         <Select id="slCountry" selectedKey="{jsonCountries>/countrykey}"  items ="{jsonCountries>/listCountry}" forceSelection="false" >
 
         <items>
-         <core:Item key= "{jsonCountries>key}" text="{jsonCountries>text}" />
+         <core:Item key= "{jsonCountries>Key}" text="{jsonCountries>Text}" />
           </items>
         </Select>
-         <Button id="btnFilter" text="{i18n>btnFilter}" icon="sap-icon//search" press="onFilter" class = "sapUi5SmallMargingaui"></Button>
-         <Button id="btnClearFilter" text="{i18n>btnClearFilter}" icon="sap-icon//clear-filter" press="onClearFilter" class = "sapUi5SmallMArgingaui"></Button>
+         <Button id="btnFilter" text="{i18n>btnFilter}" icon="sap-icon//search" press="onFilter" class = "sapUiSmallMargin"></Button>
+         <Button id="btnClearFilter" text="{i18n>btnClearFilter}" icon="sap-icon//clear-filter" press="onClearFilter" class = "sapUiSmallMArgin"></Button>
         </HBox>
         <HBox >
         <core:Fragment fragmentName="logaligroup.employees.fragment.TableEmployee" type="XML" />

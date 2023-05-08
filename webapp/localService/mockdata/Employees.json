@@ -3,6 +3,7 @@
             "EmployeeID": "1",
             "LastName": "García Lopez",
             "FirstName": "María",
+            "Title":"Sales Representative",
             "Country": "ES",
             "City": "Madrid",
             "PostalCode": "28021",
